@@ -65,11 +65,11 @@ function getAllPlanets(dateString, longitude, latitude, height) {
  * @param {Number} lng longitude
  * @param {Number} timezone timezone in hours
  */
-function getBirthChart(dateString, timeString, lat, lng, timezone) {
+function getBirthChart(dateString, timeString, lat, lng, timezone,ayanamsha=5) {
   // console.log(calculateHouses({ dateString, timeString, lat, lng, timezone }));
   const grahaPositions = jyotish.grahas.getGrahasPosition(
     { dateString, timeString, lat, lng, timezone },
-    { zodiacType: "S", houseType: "P" }
+    { zodiacType: "S",ayanamsha:ayanamsha, houseType: "P" }
   );
 
   const birthChart = {
